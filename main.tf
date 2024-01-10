@@ -14,8 +14,8 @@ resource "aws_instance" "public_instance" {
   key_name = aws_key_pair.autodeploy.key_name  # Link the key pair to the instance
 }
 #creating security groups to allow my teams IP's
-resource "aws_security_group" "allow_ssh” {
-  name        = "allow_ssh”
+resource "aws_security_group" "allow_ssh" {
+  name        = "allow_ssh"
   description = "Allow SSH inbound traffic"
   vpc_id      = aws_vpc.main.id
 
