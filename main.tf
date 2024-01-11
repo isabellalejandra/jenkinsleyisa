@@ -17,7 +17,7 @@ resource "aws_instance" "public_instance" {
 resource "aws_security_group" "allow_ssh" {
   name        = "allow_ssh"
   description = "Allow SSH inbound traffic"
-  vpc_id      = "${aws_vpc.id}"
+  vpc_id      = "vpc-02005d49d099e87b4"
 
   ingress {
     description      = "SSH from VPC"
