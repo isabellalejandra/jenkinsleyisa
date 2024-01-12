@@ -42,15 +42,15 @@ resource "aws_security_group" "allow_ssh" {
     Name = "allow_ssh"
   }
 }
-#adding additional volume to instance using terraform
+#adding additional EBS volume to EC2 instance using terraform
 resource "aws_volume_attachment" "purple_team" {
   device_name = "/dev/sdh"
   volume_id   = aws_ebs_volume.purple_team.id
-  instance_id = aws_instance.web.id
+  instance_id = aws_instance.public_instance.id
 }
-
-resource "aws_ebs_volume" "example" {
-  availability_zone = "us-east-1b"
+#create the EBS volume
+resource "aws_ebs_volume" "add_disk" {
+  availability_zone = "aws_instance.public_instance.availability_zone"
   size              = 10
 }
 #creating a vcp with terraform 
