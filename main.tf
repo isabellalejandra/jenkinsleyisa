@@ -48,14 +48,7 @@ resource "aws_volume_attachment" "purple_team" {
   volume_id   = aws_ebs_volume.example.id
   instance_id = aws_instance.web.id
 }
-resource "aws_instance" "web" {
-  ami               = "ami-0c7217cdde317cfec"
-  availability_zone = "us-east-1b"
-  instance_type     = "t2.micro"
-  tags = {
-    Name = "HelloWorld"
-  }
-}
+
 resource "aws_ebs_volume" "example" {
   availability_zone = "us-east-1b"
   size              = 10
