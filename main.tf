@@ -43,9 +43,9 @@ resource "aws_security_group" "allow_ssh" {
   }
 }
 #adding additional EBS volume to EC2 instance using terraform
-resource "aws_volume_attachment" "purple_team" {
+resource "aws_volume_attachment" "ebs_att" {
   device_name = "/dev/sdh"
-  volume_id   = aws_ebs_volume.purple_team.id
+  volume_id   = aws_ebs_volume.aws_ebs_volume.example.id
   instance_id = aws_instance.public_instance.id
 }
 #create the EBS volume
