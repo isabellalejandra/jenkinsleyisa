@@ -60,3 +60,11 @@ resource "aws_ebs_volume" "example" {
   availability_zone = "us-east-1b"
   size              = 10
 }
+#creating a vcp with terraform 
+resource "aws_vpc" "main" {
+ cidr_block = "10.10.10.0/24"
+ 
+ tags = {
+   Name = "Purple team vcp"
+ }
+}
